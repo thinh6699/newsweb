@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<main class="container mt-3 mb-5">
+	<h3 class="border-bottom pb-1 my-4">Tất cả chủ đề</h3>
+    <!-- News Box -->
+    {% for cat in cats %}
+	<div class="card mb-4 shadow">
+	  <div class="row no-gutters">
+	    <div class="col-md-3">
+        <img src="/media/{{ cat.category_image }}" class="card-img-top"  alt="{{ cat.title }}"
+        />
+	    </div>
+	    <div class="col-md-8">
+            <br>
+	      <div class="card-body">
+	        <h5 class="card-title">{{cat.title}}</h5>
+<br>
+	        <p class="card-text"><a href="category/{{cat.id}}" class="btn btn-sm btn-primary">Tất cả tin</a></p>
+	      </div>
+	    </div>
+	  </div>
+    </div>
+    {% endfor %}
+</main>
+{% endblock %}

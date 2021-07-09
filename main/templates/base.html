@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{% block tile %}Trang chủ{% endblock %}</title>
+	<!-- Bootstrap 4 CSS -->
+	<link rel="stylesheet" type="text/css" href="{% static '/vendor/bs4/bootstrap.min.css' %}" />
+	<!-- Main Jquery -->
+	<script type="text/javascript" src="{% static '/vendor/jquery.min.js' %}"></script>
+	<!-- Bootstrap Js -->
+	<script type="text/javascript" src="{% static '/vendor/bs4/bootstrap.min.js' %}"></script>
+</head>
+<body>
+	<!-- Top News -->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+		<div class="container">
+		  <a class="navbar-brand" href="/">Tin tức 24h</a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="collapse navbar-collapse" id="navbarNav">
+		    <ul class="navbar-nav ml-auto">
+		      <li class="nav-item active">
+		        <a class="nav-link" href="/">Trang chủ</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="{% url 'all-news' %}">Tất cả tin</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="{% url 'all-category' %}">Tất cả chủ đề</a>
+		      </li>
+		    </ul>
+		  </div>
+	  	</div>
+    </nav>
+
+    
+    {% block content %}
+    {% endblock %}
+<hr/>
+<footer class="text-muted">
+  <div class="container">
+    <p class="float-right">
+      <a href="#">Trở về trang đầu</a>
+	</p>
+	<p>Tin tức 24h nơi cập nhật tin tức nhanh chóng nhất mỗi ngày</p>
+    <p> <a href="https://google.com/">Visit the homepage</a></a>.</p>
+  </div>
+</footer>
+</body>
+</html>
